@@ -72,6 +72,9 @@ public class Install extends HttpServlet {
          FileOutputStream fileout = new FileOutputStream(configPath);
          config.store(fileout, null); 
          fileout.close();
+        
+        // TODO: this is redundant. will remove later
+        String adminpass2= HashMe.hashMe(request.getParameter("adminpass"));
          
         String i=request.getParameter("setup");
         response.setContentType("text/html;charset=UTF-8");
